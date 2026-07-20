@@ -1,0 +1,23 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "crld_ours,res32x4,res8x4"
+  PROJECT: "cifar100_baselines"
+  MIXED: true
+  ALPHA: 0.2
+  LOGIT_STAND: false
+DISTILLER:
+  TYPE: "CRLD_Ours"
+  TEACHER: "resnet32x4"
+  STUDENT: "resnet8x4"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 240
+  LR: 0.05
+  LR_DECAY_STAGES: [200, 300, 400]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+  TRAINER: "crld_ours"
+
+
